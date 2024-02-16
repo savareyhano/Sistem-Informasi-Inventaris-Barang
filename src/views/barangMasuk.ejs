@@ -1,5 +1,5 @@
-<%- include('./partials/header') %> 
-<%- include('./partials/nav') %> 
+<%- include('./partials/header') %>
+<%- include('./partials/nav') %>
           <div class="col-sm-6">
             <h1>Barang Masuk</h1>
           </div>
@@ -22,12 +22,12 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <% if(locals.deleteFail){ %> 
+            <% if(locals.deleteFail){ %>
             <div class="alert alert-danger alert-dismissible">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              <%= deleteFail %> 
+              <%= deleteFail %>
             </div>
-            <% } %> 
+            <% } %>
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Tabel Barang Masuk</h3>
@@ -46,7 +46,7 @@
                       <th>Penginput</th>
                       <% if(typeof locals.user != 'undefined') { %>
                       <th>Aksi</th>
-                      <% } %> 
+                      <% } %>
                     </tr>
                   </thead>
                   <tbody>
@@ -54,8 +54,8 @@
                     <tr>
                       <td><%= index+1%></td>
                       <td><%= moment(element.tanggal).locale('id').format('DD-MM-YYYY HH:mm:ss') %></td>
-                      <td><%= element.kodebarang_m %></td>
-                      <td><%= element.namabarang_m %></td>
+                      <td><%= element.kodebarangMasuk %></td>
+                      <td><%= element.namabarangMasuk %></td>
                       <td><%= element.qty %></td>
                       <td><%= element.keterangan %></td>
                       <td><%= element.penginput %></td>
@@ -68,7 +68,7 @@
                           <i class="fas fa-trash-alt"></i>
                         </button>
                       </td>
-                      <% } %> 
+                      <% } %>
                     </tr>
 
                     <!-- Edit Modal -->
@@ -102,7 +102,7 @@
                         </div>
                       </div>
                     </div>
-                  
+
                     <!-- Delete Modal-->
                     <div class="modal fade" id="delete<%= element.idmasuk %>">
                       <div class="modal-dialog">
@@ -115,7 +115,7 @@
                           <!-- Modal body-->
                           <form action="/barangmasuk/delete/<%= element.idmasuk %>" method="post">
                             <div class="modal-body">
-                              Apakah Anda yakin ingin menghapus barang masuk <%= element.namabarang_m %> pada tanggal <%= moment(element.tanggal).locale('id').format('DD-MM-YYYY [jam] HH:mm:ss') %>?
+                              Apakah Anda yakin ingin menghapus barang masuk <%= element.namabarangMasuk %> pada tanggal <%= moment(element.tanggal).locale('id').format('DD-MM-YYYY [jam] HH:mm:ss') %>?
                               <input type="hidden" name="idmasuk" required value="<%= element.idmasuk %>">
                               <input type="hidden" name="idbarang" required value="<%= element.idbarang %>">
                               <input type="hidden" name="qty" required value="<%= element.qty %>">
@@ -165,7 +165,7 @@
                   <option value="" disabled selected>Pilih Barang</option>
                   <% brg.forEach((element)=> { %>
                   <option value="<%= element.idbarang %>"><%= element.kodebarang %> - <%= element.namabarang %></option>
-                  <% }) %> 
+                  <% }) %>
                 </select>
               </div>
               <div class="form-group">
@@ -186,4 +186,4 @@
       </div>
     </div>
 
-<%- include('./partials/footer') %> 
+<%- include('./partials/footer') %>
