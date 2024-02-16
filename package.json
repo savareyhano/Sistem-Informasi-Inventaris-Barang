@@ -1,11 +1,11 @@
 {
-  "name": "project",
+  "name": "sistem-informasi-inventaris-barang",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/server.js",
+    "start:prod": "SET NODE_ENV=production && node ./src/server.js",
+    "start:dev": "nodemon ./src/server.js",
     "setup-db": "node scripts/setup-db.js"
   },
   "keywords": [],
