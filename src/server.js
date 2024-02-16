@@ -35,8 +35,8 @@ app.use(
 app.use('/css', express.static(path.join(__dirname, '../public/css')));
 app.use('/js', express.static(path.join(__dirname, '../public/js')));
 app.use('/uploads', express.static(path.join(__dirname, '../public/uploads')));
-app.use('/plugins', express.static(path.join(__dirname, '../public/plugins')));
-app.use('/dist', express.static(path.join(__dirname, '../public/dist')));
+app.use('/plugins', express.static(path.join(__dirname, '../public/ui/plugins')));
+app.use('/dist', express.static(path.join(__dirname, '../public/ui/dist')));
 app.use('/node_modules', express.static(path.join(__dirname, '../node_modules')));
 
 // Custom logger
